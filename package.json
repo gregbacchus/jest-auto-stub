@@ -1,11 +1,13 @@
 {
-  "name": "jest-auto-stub",
-  "version": "1.0.0",
-  "description": "Automatically create type-safe fully stubbed instances of classes or interfaces.",
-  "main": "index.js",
-  "scripts": {
-    "test": "npx jest"
+  "author": "Greg Bacchus",
+  "dependencies": {
+    "@types/jest": "^24.0.3",
+    "jest": "^24.1.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
   },
+  "description": "Automatically create type-safe fully stubbed instances of classes or interfaces.",
   "keywords": [
     "jest",
     "typescript",
@@ -13,13 +15,19 @@
     "mock",
     "auto"
   ],
-  "author": "Greg Bacchus",
-  "license": "ISC",
-  "dependencies": {
-    "@types/jest": "^24.0.3",
-    "jest": "^24.1.0",
-    "ts-jest": "^23.10.5",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
-  }
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "name": "jest-auto-stub",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregbacchus/jest-auto-stub.git"
+  },
+  "scripts": {
+    "test": "npx jest --coverage",
+    "build": "rm -rf dist && npx tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build && npm version patch",
+    "postpublish": "git push"
+  },
+  "types": "./src/index.ts",
+  "version": "1.0.0"
 }
