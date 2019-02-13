@@ -1,0 +1,56 @@
+{
+  "enable": true,
+  "extends": "./node_modules/tslint/lib/configs/recommended",
+  "defaultSeverity": "error",
+  "jsRules": {},
+  "rules": {
+    "align": {
+      "options": [
+        "statements"
+      ]
+    },
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "curly": [
+      true,
+      "ignore-same-line"
+    ],
+    "no-console": false,
+    "no-empty": false,
+    "no-empty-interface": false,
+    "max-classes-per-file": false,
+    "no-unused-expression": [
+      true,
+      "allow-fast-null-checks",
+      "allow-new"
+    ],
+    "arrow-parens": [
+      true
+    ],
+    "no-var-requires": false,
+    "no-shadowed-variable": false,
+    "max-line-length": false,
+    "no-namespace": false,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-leading-underscore"
+      ]
+    },
+    "interface-name": [
+      true,
+      "never-prefix"
+    ]
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": [
+      "aurelia_project/**",
+      "scripts/**"
+    ]
+  }
+}

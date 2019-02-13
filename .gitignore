@@ -1,0 +1,14 @@
+/mongod
+/.c9revisions
+/.idea
+*.suo
+/node_modules
+/coverage
+/_*
+/certs
+*.log
+.npmrc
+*.js
+*.d.ts
+*.map
+!jest.config.js

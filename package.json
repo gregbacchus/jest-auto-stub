@@ -1,0 +1,25 @@
+{
+  "name": "jest-auto-stub",
+  "version": "1.0.0",
+  "description": "Automatically create type-safe fully stubbed instances of classes or interfaces.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "keywords": [
+    "jest",
+    "typescript",
+    "stub",
+    "mock",
+    "auto"
+  ],
+  "author": "Greg Bacchus",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^24.0.3",
+    "jest": "^24.1.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}
