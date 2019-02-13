@@ -1,11 +1,17 @@
-export function stub<T extends {}>(): T {
+export function stub<T extends {}>(base: Partial<T> = {}): T {
   const store = new Map();
-  return new Proxy({}, {
-    get: function (target, prop) {
+  return new Proxy(base, {
+    get(target, prop) {
       if (prop in target) return (target as any)[prop];
-      if (!store.has(prop)) store.set(prop, jest.fn())
+      if (prop === 'then') return undefined;
+      if (!store.has(prop)) store.set(prop, jest.fn());
       return store.get(prop);
-    }
+    },
+    has(target, prop) {
+      if (prop in target) return true;
+      if (prop === 'then') return false;
+      return true;
+    },
   }) as T;
 }
 
@@ -14,5 +20,5 @@ export type Stub<T> = {
 };
 
 export function reveal<T extends {}>(original: T): Stub<T> {
-  return <any>original as Stub<T>;
+  return (original as any) as Stub<T>;
 }
