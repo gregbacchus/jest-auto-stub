@@ -5,7 +5,7 @@ interface MyInterface {
 }
 
 class MyClass {
-  bar(): string {
+  public bar(): string {
     return 'foo';
   }
 }
