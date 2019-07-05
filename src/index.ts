@@ -1,4 +1,12 @@
-export function stub<T extends {}>(base: Partial<T> = {}): T {
+// RecursivePartial definition based on https://stackoverflow.com/a/51365037
+type RecursivePartial<T> = {
+  [P in keyof T]?:
+    T[P] extends (infer U)[] ? RecursivePartial<U>[] :
+    T[P] extends object ? RecursivePartial<T[P]> :
+    T[P];
+};
+
+export function stub<T extends {}>(base: RecursivePartial<T> = {}): T {
   const store = new Map();
   return new Proxy(base, {
     get(target, prop) {
