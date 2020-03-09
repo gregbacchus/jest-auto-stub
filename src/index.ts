@@ -24,7 +24,7 @@ export function stub<T extends {}>(base: RecursivePartial<T> = {}): T {
 }
 
 export type Stub<T> = {
-  [P in keyof T]: jest.Mock<{}>;
+  [P in keyof T]: jest.Mock<T[P]>;
 };
 
 export function reveal<T extends {}>(original: T): Stub<T> {
