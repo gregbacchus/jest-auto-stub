@@ -1,11 +1,11 @@
 {
   "author": "Greg Bacchus",
   "dependencies": {
-    "@types/jest": "^24.0.15",
-    "jest": "^24.8.0",
-    "ts-jest": "^23.10.5",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.3"
+    "@types/jest": "^25.2.1",
+    "jest": "^25.2.7",
+    "ts-jest": "^25.3.1",
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
   },
   "description": "Automatically create type-safe fully stubbed instances of classes or interfaces.",
   "keywords": [
