@@ -12,3 +12,4 @@
 *.d.ts
 *.map
 !jest.config.js
+!eslint.config.js

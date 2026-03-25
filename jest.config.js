@@ -5,11 +5,11 @@ module.exports = {
     'js',
     'jsx',
     'json',
-    'node'
+    'node',
   ],
   testRegex: '/(test|src)/.*\\.(test)\\.(tsx?)$',
   testURL: 'http://localhost',
   transform: {
-    '^.+\\.tsx?$': 'ts-jest'
+    '^.+\\.tsx?$': 'ts-jest',
   },
 };

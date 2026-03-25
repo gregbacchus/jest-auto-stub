@@ -1,12 +1,12 @@
 // RecursivePartial definition based on https://stackoverflow.com/a/51365037
 type RecursivePartial<T> = {
   [P in keyof T]?:
-  T[P] extends Array<infer U> ? Array<RecursivePartial<U>> :
-  T[P] extends object ? RecursivePartial<T[P]> :
-  T[P];
+  T[P] extends Array<infer U> ? Array<RecursivePartial<U>>
+    : T[P] extends object ? RecursivePartial<T[P]>
+      : T[P];
 };
 
-export function stub<T extends {}>(base: RecursivePartial<T> = {}): T {
+export function stub<T extends object>(base: RecursivePartial<T> = {}): T {
   const store = new Map();
   return new Proxy(base, {
     get(target, prop) {
@@ -33,6 +33,6 @@ export type Stub<T> = {
   [P in keyof T]: StubValue<T[P]>;
 };
 
-export function reveal<T extends {}>(original: T): Stub<T> {
+export function reveal<T extends object>(original: T): Stub<T> {
   return original as Stub<T>;
 }
